@@ -116,7 +116,7 @@ def perceptron(mult = 0, import_alpha = 0):
     if import_alpha:
         read_alpha()
     for t in range(T_DEFAULT):
-        print '---{}---'.format(t)
+        print '---{0}---'.format(t)
         sys.stdout.flush()
         dont_repeat = True
         data = open(sys.argv[2], 'r')
@@ -128,16 +128,19 @@ def perceptron(mult = 0, import_alpha = 0):
             result = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, mult)
             z = result[0]
             indices = result[1]
+            test = get_indices(sentence, z)
+            indices.sort()
+            test.sort()
             if not z == tags:
                 dont_repeat = False
                 correct_indices = get_indices(sentence, tags)
                 if mult:
-                    for i in indices:
+                    for i in test:
                         alpha[i] = float(alpha[i])/mult_factor
                     for i in correct_indices:
                         alpha[i] = float(alpha[i])*mult_factor
                 else:
-                    for i in indices:
+                    for i in test:
                         alpha[i] += -1*add_factor
                     for i in correct_indices:
                         alpha[i] += add_factor
@@ -148,12 +151,12 @@ def perceptron(mult = 0, import_alpha = 0):
         if dont_repeat:
             print 'SUCCESS!!!'
             break
-        print 'number correct: {}'.format(j)
+        print 'number correct: {0}'.format(j)
 
 def print_alpha():
     out = open(sys.argv[3], 'w')
     global alpha
     for i in alpha:
-        out.write('{}\n'.format(i))
+        out.write('{0}\n'.format(i))
 
-perceptron(1)
+perceptron()
