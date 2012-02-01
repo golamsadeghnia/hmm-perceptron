@@ -1,0 +1,20 @@
+---0---
+number correct: 6512
+---1---
+number correct: 6325
+---2---
+number correct: 6295
+---3---
+number correct: 6299
+---4---
+number correct: 6320
+---5---
+number correct: 6313
+---6---
+number correct: 6300
+---7---
+number correct: 6305
+---8---
+number correct: 6325
+---9---
+number correct: 6316
