@@ -1,0 +1,1200 @@
+---0---
+number correct: 22
+---1---
+number correct: 138
+---2---
+number correct: 144
+---3---
+number correct: 28
+---4---
+number correct: 141
+---5---
+number correct: 152
+---6---
+number correct: 142
+---7---
+number correct: 152
+---8---
+number correct: 154
+---9---
+number correct: 78
+---10---
+number correct: 155
+---11---
+number correct: 159
+---12---
+number correct: 147
+---13---
+number correct: 42
+---14---
+number correct: 139
+---15---
+number correct: 139
+---16---
+number correct: 140
+---17---
+number correct: 138
+---18---
+number correct: 73
+---19---
+number correct: 149
+---20---
+number correct: 159
+---21---
+number correct: 126
+---22---
+number correct: 165
+---23---
+number correct: 44
+---24---
+number correct: 135
+---25---
+number correct: 139
+---26---
+number correct: 144
+---27---
+number correct: 143
+---28---
+number correct: 83
+---29---
+number correct: 160
+---30---
+number correct: 161
+---31---
+number correct: 74
+---32---
+number correct: 159
+---33---
+number correct: 160
+---34---
+number correct: 165
+---35---
+number correct: 47
+---36---
+number correct: 140
+---37---
+number correct: 144
+---38---
+number correct: 143
+---39---
+number correct: 152
+---40---
+number correct: 75
+---41---
+number correct: 146
+---42---
+number correct: 148
+---43---
+number correct: 80
+---44---
+number correct: 158
+---45---
+number correct: 153
+---46---
+number correct: 74
+---47---
+number correct: 160
+---48---
+number correct: 160
+---49---
+number correct: 165
+---50---
+number correct: 49
+---51---
+number correct: 143
+---52---
+number correct: 143
+---53---
+number correct: 143
+---54---
+number correct: 128
+---55---
+number correct: 132
+---56---
+number correct: 134
+---57---
+number correct: 146
+---58---
+number correct: 85
+---59---
+number correct: 143
+---60---
+number correct: 156
+---61---
+number correct: 64
+---62---
+number correct: 157
+---63---
+number correct: 155
+---64---
+number correct: 155
+---65---
+number correct: 46
+---66---
+number correct: 160
+---67---
+number correct: 160
+---68---
+number correct: 161
+---69---
+number correct: 91
+---70---
+number correct: 150
+---71---
+number correct: 156
+---72---
+number correct: 80
+---73---
+number correct: 148
+---74---
+number correct: 156
+---75---
+number correct: 80
+---76---
+number correct: 156
+---77---
+number correct: 155
+---78---
+number correct: 77
+---79---
+number correct: 160
+---80---
+number correct: 161
+---81---
+number correct: 91
+---82---
+number correct: 146
+---83---
+number correct: 160
+---84---
+number correct: 70
+---85---
+number correct: 147
+---86---
+number correct: 150
+---87---
+number correct: 133
+---88---
+number correct: 135
+---89---
+number correct: 87
+---90---
+number correct: 156
+---91---
+number correct: 156
+---92---
+number correct: 72
+---93---
+number correct: 160
+---94---
+number correct: 161
+---95---
+number correct: 161
+---96---
+number correct: 54
+---97---
+number correct: 143
+---98---
+number correct: 155
+---99---
+number correct: 154
+---100---
+number correct: 122
+---101---
+number correct: 163
+---102---
+number correct: 61
+---103---
+number correct: 154
+---104---
+number correct: 156
+---105---
+number correct: 150
+---106---
+number correct: 72
+---107---
+number correct: 161
+---108---
+number correct: 161
+---109---
+number correct: 91
+---110---
+number correct: 145
+---111---
+number correct: 159
+---112---
+number correct: 69
+---113---
+number correct: 144
+---114---
+number correct: 149
+---115---
+number correct: 122
+---116---
+number correct: 141
+---117---
+number correct: 82
+---118---
+number correct: 158
+---119---
+number correct: 156
+---120---
+number correct: 80
+---121---
+number correct: 161
+---122---
+number correct: 161
+---123---
+number correct: 84
+---124---
+number correct: 144
+---125---
+number correct: 155
+---126---
+number correct: 79
+---127---
+number correct: 154
+---128---
+number correct: 157
+---129---
+number correct: 83
+---130---
+number correct: 156
+---131---
+number correct: 156
+---132---
+number correct: 80
+---133---
+number correct: 161
+---134---
+number correct: 161
+---135---
+number correct: 91
+---136---
+number correct: 148
+---137---
+number correct: 158
+---138---
+number correct: 62
+---139---
+number correct: 145
+---140---
+number correct: 145
+---141---
+number correct: 154
+---142---
+number correct: 83
+---143---
+number correct: 157
+---144---
+number correct: 156
+---145---
+number correct: 84
+---146---
+number correct: 161
+---147---
+number correct: 166
+---148---
+number correct: 87
+---149---
+number correct: 153
+---150---
+number correct: 156
+---151---
+number correct: 82
+---152---
+number correct: 161
+---153---
+number correct: 161
+---154---
+number correct: 87
+---155---
+number correct: 161
+---156---
+number correct: 159
+---157---
+number correct: 85
+---158---
+number correct: 148
+---159---
+number correct: 150
+---160---
+number correct: 81
+---161---
+number correct: 161
+---162---
+number correct: 161
+---163---
+number correct: 87
+---164---
+number correct: 156
+---165---
+number correct: 155
+---166---
+number correct: 82
+---167---
+number correct: 161
+---168---
+number correct: 161
+---169---
+number correct: 86
+---170---
+number correct: 160
+---171---
+number correct: 159
+---172---
+number correct: 85
+---173---
+number correct: 148
+---174---
+number correct: 155
+---175---
+number correct: 126
+---176---
+number correct: 161
+---177---
+number correct: 51
+---178---
+number correct: 144
+---179---
+number correct: 155
+---180---
+number correct: 155
+---181---
+number correct: 155
+---182---
+number correct: 68
+---183---
+number correct: 161
+---184---
+number correct: 161
+---185---
+number correct: 145
+---186---
+number correct: 89
+---187---
+number correct: 160
+---188---
+number correct: 157
+---189---
+number correct: 79
+---190---
+number correct: 161
+---191---
+number correct: 161
+---192---
+number correct: 91
+---193---
+number correct: 156
+---194---
+number correct: 155
+---195---
+number correct: 71
+---196---
+number correct: 153
+---197---
+number correct: 154
+---198---
+number correct: 136
+---199---
+number correct: 159
+---200---
+number correct: 62
+---201---
+number correct: 156
+---202---
+number correct: 155
+---203---
+number correct: 133
+---204---
+number correct: 140
+---205---
+number correct: 88
+---206---
+number correct: 161
+---207---
+number correct: 161
+---208---
+number correct: 75
+---209---
+number correct: 156
+---210---
+number correct: 157
+---211---
+number correct: 135
+---212---
+number correct: 135
+---213---
+number correct: 80
+---214---
+number correct: 161
+---215---
+number correct: 161
+---216---
+number correct: 86
+---217---
+number correct: 160
+---218---
+number correct: 159
+---219---
+number correct: 79
+---220---
+number correct: 150
+---221---
+number correct: 150
+---222---
+number correct: 78
+---223---
+number correct: 162
+---224---
+number correct: 162
+---225---
+number correct: 87
+---226---
+number correct: 146
+---227---
+number correct: 152
+---228---
+number correct: 81
+---229---
+number correct: 157
+---230---
+number correct: 155
+---231---
+number correct: 83
+---232---
+number correct: 161
+---233---
+number correct: 161
+---234---
+number correct: 86
+---235---
+number correct: 146
+---236---
+number correct: 150
+---237---
+number correct: 77
+---238---
+number correct: 162
+---239---
+number correct: 162
+---240---
+number correct: 146
+---241---
+number correct: 86
+---242---
+number correct: 157
+---243---
+number correct: 155
+---244---
+number correct: 82
+---245---
+number correct: 156
+---246---
+number correct: 155
+---247---
+number correct: 83
+---248---
+number correct: 161
+---249---
+number correct: 162
+---250---
+number correct: 140
+---251---
+number correct: 139
+---252---
+number correct: 158
+---253---
+number correct: 55
+---254---
+number correct: 150
+---255---
+number correct: 152
+---256---
+number correct: 152
+---257---
+number correct: 83
+---258---
+number correct: 155
+---259---
+number correct: 155
+---260---
+number correct: 84
+---261---
+number correct: 162
+---262---
+number correct: 162
+---263---
+number correct: 81
+---264---
+number correct: 156
+---265---
+number correct: 153
+---266---
+number correct: 81
+---267---
+number correct: 153
+---268---
+number correct: 154
+---269---
+number correct: 84
+---270---
+number correct: 162
+---271---
+number correct: 162
+---272---
+number correct: 89
+---273---
+number correct: 158
+---274---
+number correct: 158
+---275---
+number correct: 81
+---276---
+number correct: 155
+---277---
+number correct: 155
+---278---
+number correct: 136
+---279---
+number correct: 136
+---280---
+number correct: 82
+---281---
+number correct: 151
+---282---
+number correct: 155
+---283---
+number correct: 84
+---284---
+number correct: 162
+---285---
+number correct: 162
+---286---
+number correct: 84
+---287---
+number correct: 157
+---288---
+number correct: 157
+---289---
+number correct: 78
+---290---
+number correct: 162
+---291---
+number correct: 162
+---292---
+number correct: 87
+---293---
+number correct: 156
+---294---
+number correct: 154
+---295---
+number correct: 77
+---296---
+number correct: 153
+---297---
+number correct: 154
+---298---
+number correct: 136
+---299---
+number correct: 138
+---300---
+number correct: 83
+---301---
+number correct: 162
+---302---
+number correct: 162
+---303---
+number correct: 83
+---304---
+number correct: 159
+---305---
+number correct: 158
+---306---
+number correct: 78
+---307---
+number correct: 154
+---308---
+number correct: 155
+---309---
+number correct: 80
+---310---
+number correct: 160
+---311---
+number correct: 160
+---312---
+number correct: 154
+---313---
+number correct: 58
+---314---
+number correct: 146
+---315---
+number correct: 146
+---316---
+number correct: 148
+---317---
+number correct: 82
+---318---
+number correct: 155
+---319---
+number correct: 154
+---320---
+number correct: 83
+---321---
+number correct: 162
+---322---
+number correct: 162
+---323---
+number correct: 85
+---324---
+number correct: 156
+---325---
+number correct: 154
+---326---
+number correct: 85
+---327---
+number correct: 160
+---328---
+number correct: 160
+---329---
+number correct: 86
+---330---
+number correct: 159
+---331---
+number correct: 157
+---332---
+number correct: 84
+---333---
+number correct: 154
+---334---
+number correct: 154
+---335---
+number correct: 80
+---336---
+number correct: 154
+---337---
+number correct: 154
+---338---
+number correct: 125
+---339---
+number correct: 159
+---340---
+number correct: 57
+---341---
+number correct: 162
+---342---
+number correct: 159
+---343---
+number correct: 164
+---344---
+number correct: 87
+---345---
+number correct: 158
+---346---
+number correct: 156
+---347---
+number correct: 80
+---348---
+number correct: 162
+---349---
+number correct: 162
+---350---
+number correct: 84
+---351---
+number correct: 155
+---352---
+number correct: 154
+---353---
+number correct: 82
+---354---
+number correct: 157
+---355---
+number correct: 155
+---356---
+number correct: 83
+---357---
+number correct: 160
+---358---
+number correct: 160
+---359---
+number correct: 84
+---360---
+number correct: 157
+---361---
+number correct: 154
+---362---
+number correct: 128
+---363---
+number correct: 161
+---364---
+number correct: 60
+---365---
+number correct: 146
+---366---
+number correct: 153
+---367---
+number correct: 157
+---368---
+number correct: 84
+---369---
+number correct: 155
+---370---
+number correct: 154
+---371---
+number correct: 83
+---372---
+number correct: 160
+---373---
+number correct: 160
+---374---
+number correct: 81
+---375---
+number correct: 157
+---376---
+number correct: 156
+---377---
+number correct: 124
+---378---
+number correct: 157
+---379---
+number correct: 61
+---380---
+number correct: 148
+---381---
+number correct: 151
+---382---
+number correct: 159
+---383---
+number correct: 84
+---384---
+number correct: 153
+---385---
+number correct: 154
+---386---
+number correct: 81
+---387---
+number correct: 161
+---388---
+number correct: 159
+---389---
+number correct: 143
+---390---
+number correct: 83
+---391---
+number correct: 156
+---392---
+number correct: 155
+---393---
+number correct: 82
+---394---
+number correct: 160
+---395---
+number correct: 160
+---396---
+number correct: 86
+---397---
+number correct: 159
+---398---
+number correct: 155
+---399---
+number correct: 83
+---400---
+number correct: 155
+---401---
+number correct: 155
+---402---
+number correct: 82
+---403---
+number correct: 162
+---404---
+number correct: 162
+---405---
+number correct: 84
+---406---
+number correct: 155
+---407---
+number correct: 154
+---408---
+number correct: 128
+---409---
+number correct: 157
+---410---
+number correct: 59
+---411---
+number correct: 154
+---412---
+number correct: 154
+---413---
+number correct: 154
+---414---
+number correct: 82
+---415---
+number correct: 162
+---416---
+number correct: 160
+---417---
+number correct: 81
+---418---
+number correct: 156
+---419---
+number correct: 153
+---420---
+number correct: 83
+---421---
+number correct: 160
+---422---
+number correct: 160
+---423---
+number correct: 84
+---424---
+number correct: 159
+---425---
+number correct: 156
+---426---
+number correct: 81
+---427---
+number correct: 157
+---428---
+number correct: 155
+---429---
+number correct: 82
+---430---
+number correct: 162
+---431---
+number correct: 162
+---432---
+number correct: 84
+---433---
+number correct: 156
+---434---
+number correct: 154
+---435---
+number correct: 132
+---436---
+number correct: 139
+---437---
+number correct: 138
+---438---
+number correct: 138
+---439---
+number correct: 136
+---440---
+number correct: 153
+---441---
+number correct: 56
+---442---
+number correct: 154
+---443---
+number correct: 152
+---444---
+number correct: 153
+---445---
+number correct: 78
+---446---
+number correct: 160
+---447---
+number correct: 160
+---448---
+number correct: 87
+---449---
+number correct: 155
+---450---
+number correct: 154
+---451---
+number correct: 83
+---452---
+number correct: 160
+---453---
+number correct: 160
+---454---
+number correct: 85
+---455---
+number correct: 159
+---456---
+number correct: 155
+---457---
+number correct: 83
+---458---
+number correct: 157
+---459---
+number correct: 154
+---460---
+number correct: 82
+---461---
+number correct: 162
+---462---
+number correct: 161
+---463---
+number correct: 83
+---464---
+number correct: 155
+---465---
+number correct: 154
+---466---
+number correct: 128
+---467---
+number correct: 137
+---468---
+number correct: 136
+---469---
+number correct: 155
+---470---
+number correct: 68
+---471---
+number correct: 155
+---472---
+number correct: 156
+---473---
+number correct: 82
+---474---
+number correct: 160
+---475---
+number correct: 160
+---476---
+number correct: 84
+---477---
+number correct: 154
+---478---
+number correct: 153
+---479---
+number correct: 83
+---480---
+number correct: 154
+---481---
+number correct: 154
+---482---
+number correct: 85
+---483---
+number correct: 155
+---484---
+number correct: 155
+---485---
+number correct: 86
+---486---
+number correct: 160
+---487---
+number correct: 160
+---488---
+number correct: 145
+---489---
+number correct: 81
+---490---
+number correct: 156
+---491---
+number correct: 156
+---492---
+number correct: 133
+---493---
+number correct: 138
+---494---
+number correct: 83
+---495---
+number correct: 160
+---496---
+number correct: 160
+---497---
+number correct: 87
+---498---
+number correct: 160
+---499---
+number correct: 157
+---500---
+number correct: 79
+---501---
+number correct: 156
+---502---
+number correct: 153
+---503---
+number correct: 78
+---504---
+number correct: 162
+---505---
+number correct: 159
+---506---
+number correct: 161
+---507---
+number correct: 67
+---508---
+number correct: 154
+---509---
+number correct: 155
+---510---
+number correct: 135
+---511---
+number correct: 82
+---512---
+number correct: 155
+---513---
+number correct: 155
+---514---
+number correct: 84
+---515---
+number correct: 160
+---516---
+number correct: 160
+---517---
+number correct: 86
+---518---
+number correct: 156
+---519---
+number correct: 154
+---520---
+number correct: 81
+---521---
+number correct: 162
+---522---
+number correct: 160
+---523---
+number correct: 142
+---524---
+number correct: 83
+---525---
+number correct: 156
+---526---
+number correct: 155
+---527---
+number correct: 82
+---528---
+number correct: 155
+---529---
+number correct: 155
+---530---
+number correct: 85
+---531---
+number correct: 160
+---532---
+number correct: 160
+---533---
+number correct: 139
+---534---
+number correct: 142
+---535---
+number correct: 159
+---536---
+number correct: 59
+---537---
+number correct: 153
+---538---
+number correct: 154
+---539---
+number correct: 153
+---540---
+number correct: 84
+---541---
+number correct: 156
+---542---
+number correct: 155
+---543---
+number correct: 84
+---544---
+number correct: 160
+---545---
+number correct: 160
+---546---
+number correct: 82
+---547---
+number correct: 157
+---548---
+number correct: 153
+---549---
+number correct: 127
+---550---
+number correct: 160
+---551---
+number correct: 71
+---552---
+number correct: 153
+---553---
+number correct: 154
+---554---
+number correct: 80
+---555---
+number correct: 156
+---556---
+number correct: 153
+---557---
+number correct: 83
+---558---
+number correct: 160
+---559---
+number correct: 160
+---560---
+number correct: 137
+---561---
+number correct: 140
+---562---
+number correct: 80
+---563---
+number correct: 154
+---564---
+number correct: 155
+---565---
+number correct: 79
+---566---
+number correct: 160
+---567---
+number correct: 160
+---568---
+number correct: 83
+---569---
+number correct: 158
+---570---
+number correct: 155
+---571---
+number correct: 83
+---572---
+number correct: 156
+---573---
+number correct: 155
+---574---
+number correct: 82
+---575---
+number correct: 162
+---576---
+number correct: 160
+---577---
+number correct: 86
+---578---
+number correct: 154
+---579---
+number correct: 153
+---580---
+number correct: 85
+---581---
+number correct: 156
+---582---
+number correct: 155
+---583---
+number correct: 82
+---584---
+number correct: 160
+---585---
+number correct: 160
+---586---
+number correct: 87
+---587---
+number correct: 158
+---588---
+number correct: 154
+---589---
+number correct: 128
+---590---
+number correct: 155
+---591---
+number correct: 82
+---592---
+number correct: 154
+---593---
+number correct: 153
+---594---
+number correct: 85
+---595---
+number correct: 160
+---596---
+number correct: 160
+---597---
+number correct: 85
+---598---
+number correct: 157
+---599---
+number correct: 155
