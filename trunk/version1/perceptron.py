@@ -135,6 +135,7 @@ def perceptron(mult = 0, import_alpha = 0):
                 print 'ERROR!! Test != indices'
                 print test
                 print indices
+                print sentence
                 return
             if not z == correct_tags:
                 dont_repeat = False
