@@ -13,7 +13,7 @@ possible_tags = []
 strings = []
 strings_abr = []
 
-T_DEFAULT = 100
+T_DEFAULT = 400
 
 add_factor = 1
 mult_factor = 2.0
@@ -124,16 +124,21 @@ def perceptron(mult = 0, import_alpha = 0):
         j = 0
         while vals:
             sentence = vals[0]
-            tags = vals[1]
+            correct_tags = vals[1]
             result = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, mult)
             z = result[0]
             indices = result[1]
             test = get_indices(sentence, z)
             indices.sort()
             test.sort()
-            if not z == tags:
+            if not test == indices:
+                print 'ERROR!! Test != indices'
+                print test
+                print indices
+                return
+            if not z == correct_tags:
                 dont_repeat = False
-                correct_indices = get_indices(sentence, tags)
+                correct_indices = get_indices(sentence, correct_tags)
                 if mult:
                     for i in test:
                         alpha[i] = float(alpha[i])/mult_factor

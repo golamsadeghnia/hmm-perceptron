@@ -75,9 +75,7 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr, mult):
                 result_tags = [v,u]
                 result_val = val
                 result_indices = copy.deepcopy(indices)
-    if result_tags == []:
-        print 'error'
-    for k in range(len(sentence)-2, 0, -1):
+    for k in range(len(sentence)-2, -2, -1):
         vals = bp[(k+2, result_tags[len(result_tags)-1], result_tags[len(result_tags)-2])]
         result_tags.append(vals[0])
         result_indices += vals[1]
