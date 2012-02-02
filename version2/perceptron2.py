@@ -107,7 +107,7 @@ def get_indices(sentence, tags):
     result += viterbi2.get_alpha_indices(strings_abr, phi, d)
     return copy.deepcopy(result)
 
-def perceptron(mult = 0, import_alpha = 0):
+def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
     global alpha
     global possible_tags
     global strings
@@ -163,9 +163,12 @@ def perceptron(mult = 0, import_alpha = 0):
         else:
             for i in range(len(temp_alpha)):
                 alpha[i] += temp_alpha[i]
+        if print_alpha:
+            write_alpha(t)
 
-def print_alpha():
-    out = open(sys.argv[3], 'w')
+def write_alpha(t):
+    string = 'output/alpha_{}.txt'.format(t)
+    out = open(string, 'w')
     global alpha
     for i in alpha:
         out.write('{0}\n'.format(i))
