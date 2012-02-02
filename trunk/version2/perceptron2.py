@@ -13,10 +13,10 @@ possible_tags = []
 strings = []
 strings_abr = []
 
-T_DEFAULT = 100
+T_DEFAULT = 400
 
 add_factor = 1
-mult_factor = 2
+mult_factor = 2.0
 
 def init_phi_alpha(mult):
     global alpha
@@ -100,10 +100,12 @@ def get_indices(sentence, tags):
         else:
             d = dict(w_i = sentence[i], t_2 = tags[i-2], t_1 = tags[i-1], t = tags[i])
             result += viterbi2.get_alpha_indices(strings, phi, d)
-    d = dict(t_2 = tags[len(tags)-2], t_1 = tags[len(tags)-1], t = 'STOP')
+    if len(sentence) == 1:
+        d = dict(t_2 = '*', t_1 = tags[len(tags)-1], t = 'STOP')
+    else:
+        d = dict(t_2 = tags[len(tags)-2], t_1 = tags[len(tags)-1], t = 'STOP')
     result += viterbi2.get_alpha_indices(strings_abr, phi, d)
     return copy.deepcopy(result)
-        
 
 def perceptron(mult = 0, import_alpha = 0):
     global alpha
@@ -114,16 +116,15 @@ def perceptron(mult = 0, import_alpha = 0):
     global mult_factor
     init_phi_alpha(mult)
     get_strings()
+    temp_alpha = []
     if import_alpha:
         read_alpha()
-    temp_alpha = []
     for t in range(T_DEFAULT):
-        del temp_alpha[:]
         if mult:
             temp_alpha = [1]*len(alpha)
         else:
             temp_alpha = [0]*len(alpha)
-        print '---{}---'.format(t)
+        print '---{0}---'.format(t)
         sys.stdout.flush()
         dont_repeat = True
         data = open(sys.argv[2], 'r')
@@ -131,13 +132,13 @@ def perceptron(mult = 0, import_alpha = 0):
         j = 0
         while vals:
             sentence = vals[0]
-            tags = vals[1]
+            correct_tags = vals[1]
             result = viterbi2.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, mult)
             z = result[0]
             indices = result[1]
-            if not z == tags:
+            if not z == correct_tags:
                 dont_repeat = False
-                correct_indices = get_indices(sentence, tags)
+                correct_indices = get_indices(sentence, correct_tags)
                 if mult:
                     for i in indices:
                         temp_alpha[i] = float(temp_alpha[i])/mult_factor
@@ -155,18 +156,18 @@ def perceptron(mult = 0, import_alpha = 0):
         if dont_repeat:
             print 'SUCCESS!!!'
             break
-        print 'number correct: {}'.format(j)
+        print 'number correct: {0}'.format(j)
         if mult:
-            for i in range(len(alpha)):
-                alpha[i] *= temp_alpha[i]
+            for i in range(len(temp_alpha)):
+                alpha[i] = float(temp_alpha[i])*float(alpha[i])
         else:
-            for i in range(len(alpha)):
+            for i in range(len(temp_alpha)):
                 alpha[i] += temp_alpha[i]
 
 def print_alpha():
     out = open(sys.argv[3], 'w')
     global alpha
     for i in alpha:
-        out.write('{}\n'.format(i))
+        out.write('{0}\n'.format(i))
 
 perceptron()
