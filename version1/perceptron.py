@@ -116,8 +116,6 @@ def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
     global mult_factor
     init_phi_alpha(mult)
     get_strings()
-    for i in phi:
-        print i, phi[i]
     if import_alpha:
         read_alpha()
     for t in range(T_DEFAULT):
