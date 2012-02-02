@@ -1,0 +1,20 @@
+---0---
+number correct: 1145
+---1---
+number correct: 6311
+---2---
+number correct: 6285
+---3---
+number correct: 6302
+---4---
+number correct: 6449
+---5---
+number correct: 5265
+---6---
+number correct: 6685
+---7---
+number correct: 3480
+---8---
+number correct: 6405
+---9---
+number correct: 6382

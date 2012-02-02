@@ -13,7 +13,7 @@ possible_tags = []
 strings = []
 strings_abr = []
 
-T_DEFAULT = 400
+T_DEFAULT = 10
 
 add_factor = 1
 mult_factor = 2.0
@@ -167,10 +167,10 @@ def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
             write_alpha(t)
 
 def write_alpha(t):
-    string = 'output/alpha_{}.txt'.format(t)
+    string = 'outputs/alpha_{}.txt'.format(t)
     out = open(string, 'w')
     global alpha
     for i in alpha:
         out.write('{0}\n'.format(i))
 
-perceptron()
+perceptron(1)
