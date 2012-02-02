@@ -100,7 +100,10 @@ def get_indices(sentence, tags):
         else:
             d = dict(w_i = sentence[i], t_2 = tags[i-2], t_1 = tags[i-1], t = tags[i])
             result += viterbi.get_alpha_indices(strings, phi, d)
-    d = dict(t_2 = tags[len(tags)-2], t_1 = tags[len(tags)-1], t = 'STOP')
+    if len(sentence) == 1:
+        d = dict(t_2 = '*', t_1 = tags[len(tags)-1], t = 'STOP')
+    else:
+        d = dict(t_2 = tags[len(tags)-2], t_1 = tags[len(tags)-1], t = 'STOP')
     result += viterbi.get_alpha_indices(strings_abr, phi, d)
     return copy.deepcopy(result)
 
@@ -128,25 +131,16 @@ def perceptron(mult = 0, import_alpha = 0):
             result = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, mult)
             z = result[0]
             indices = result[1]
-            test = get_indices(sentence, z)
-            indices.sort()
-            test.sort()
-            if not test == indices:
-                print 'ERROR!! Test != indices'
-                print test
-                print indices
-                print sentence
-                return
             if not z == correct_tags:
                 dont_repeat = False
                 correct_indices = get_indices(sentence, correct_tags)
                 if mult:
-                    for i in test:
+                    for i in indices:
                         alpha[i] = float(alpha[i])/mult_factor
                     for i in correct_indices:
                         alpha[i] = float(alpha[i])*mult_factor
                 else:
-                    for i in test:
+                    for i in indices:
                         alpha[i] += -1*add_factor
                     for i in correct_indices:
                         alpha[i] += add_factor
