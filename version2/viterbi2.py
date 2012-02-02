@@ -40,17 +40,22 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr, mult):
                     val = pi_val
                     if mult:
                         for i in indices:
-                            val = float(val)*float(alpha[i])
+                            val = float(val)*float(alpha[i])                        
                     else:
                         for i in indices:
                             val += alpha[i]
-                    if val >= pi[(k,u,v)]:
+                    test = pi.get((k,u,v), -0.5)
+                    if test == -0.5 or val > test:
                         pi[(k,u,v)] = val
                         bp[(k,u,v)] = (w, copy.deepcopy(indices))
     result_tags = []
-    result_val = -1
+    result_val = 0
+    got_first = False
     result_indices = []
-    for u in tags:
+    tags2 = tags
+    if len(sentence) == 1:
+        tags2 = ['*']
+    for u in tags2:
         for v in tags:
             pi_val = pi.get((len(sentence),u,v), -0.5)
             if pi_val == -0.5:
@@ -66,13 +71,18 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr, mult):
             else:
                 for i in indices:
                     val += alpha[i]
-            if val > result_val:
+            if val > result_val or not got_first:
+                got_first = True
                 result_tags = [v,u]
                 result_val = val
                 result_indices = copy.deepcopy(indices)
-    for k in range(len(sentence)-2, 0, -1):
-        vals = bp.get((k+2, result_tags[len(result_tags)-1], result_tags[len(result_tags)-2]), 0)
+    for k in range(len(sentence)-2, -2, -1):
+        vals = bp[(k+2, result_tags[len(result_tags)-1], result_tags[len(result_tags)-2])]
         result_tags.append(vals[0])
         result_indices += vals[1]
     result_tags.reverse()
+    while result_tags[0] == '*':
+        result_tags.reverse()
+        result_tags.pop()
+        result_tags.reverse()
     return (copy.deepcopy(result_tags), copy.deepcopy(result_indices))
