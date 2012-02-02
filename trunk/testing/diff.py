@@ -23,18 +23,18 @@ def print_vals():
     print '---------------- '
     for key,value in sorted(tags.iteritems(), key = lambda (k,v): (-v,k)):
         if len(key) < 8:
-            print '{}:\t\t{}'.format(key, value)
+            print '{}\t\t{}'.format(key, value)
         else:
-            print '{}:\t{}'.format(key, value)
+            print '{}\t{}'.format(key, value)
     print
     print
     print 'INCORRECT WORDS: number of incorrect labelings for a given word'
     print '--------------- '
     for key,value in sorted(words.iteritems(), key = lambda (k,v): (-v,k)):
-        if len(key) < 7:
-            print '{}:\t\t{}'.format(key, value)
+        if len(key) < 8:
+            print '{}\t\t{}'.format(key, value)
         else:
-            print '{}:\t{}'.format(key, value)
+            print '{}\t{}'.format(key, value)
 
 def compare():
     global total_errors
