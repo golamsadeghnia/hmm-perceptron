@@ -1,0 +1,20 @@
+---0---
+number correct: 8459
+---1---
+number correct: 8656
+---2---
+number correct: 8773
+---3---
+number correct: 8764
+---4---
+number correct: 8787
+---5---
+number correct: 8789
+---6---
+number correct: 8831
+---7---
+number correct: 8817
+---8---
+number correct: 8827
+---9---
+number correct: 8759
