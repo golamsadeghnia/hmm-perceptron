@@ -52,10 +52,11 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr, mult):
     result_val = 0
     got_first = False
     result_indices = []
-    tags2 = copy.deepcopy(tags)
-    tags2.append('*')
+    tags2 = tags
+    if len(sentence) == 1:
+        tags2 = ['*']
     for u in tags2:
-        for v in tags2:
+        for v in tags:
             pi_val = pi.get((len(sentence),u,v), -0.5)
             if pi_val == -0.5:
                 continue
