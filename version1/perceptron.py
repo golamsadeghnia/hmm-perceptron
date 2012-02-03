@@ -9,6 +9,7 @@ from time import time
 phi = defaultdict(int)
 words = defaultdict(bool)
 alpha = []
+alpha_average = []
 possible_tags = []
 strings = []
 strings_abr = []
@@ -109,6 +110,7 @@ def get_indices(sentence, tags):
 
 def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
     global alpha
+    global alpha_average
     global possible_tags
     global strings
     global strings_abr
@@ -118,6 +120,7 @@ def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
     get_strings()
     if import_alpha:
         read_alpha()
+    alpha_average = copy.deepcopy(alpha)
     for t in range(T_DEFAULT):
         print '---{0}---'.format(t)
         sys.stdout.flush()
@@ -146,20 +149,22 @@ def perceptron(print_alpha = 0, mult = 0, import_alpha = 0):
                         alpha[i] += add_factor
             else:
                 j += 1
+            for i in range(len(alpha)):
+                alpha_average[i] += alpha[i]
             vals = get_sentence_and_tags(data)
         data.close()
         if dont_repeat:
             print 'SUCCESS!!!'
             break
-        print 'number correct: {0}'.format(j)
+#        print 'number correct: {0}'.format(j)
         if print_alpha:
             write_alpha(t)
 
 def write_alpha(t):
-    string = 'output/alpha_{}.txt'.format(t)
+    string = 'outputs_average/alpha_{}.txt'.format(t)
     out = open(string, 'w')
-    global alpha
-    for i in alpha:
+    global alpha_average
+    for i in alpha_average:
         out.write('{0}\n'.format(i))
 
 perceptron(1)
