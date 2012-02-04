@@ -11,8 +11,8 @@ def get_alpha_indices(strings, phi, d):
     for s in strings:
         index = phi.get(s.substitute(d), -1)
         if index == -1:
-            return -0.5
-        positions.append(phi[s.substitute(d)])
+            continue
+        positions.append(index)
     return copy.deepcopy(positions)
 
 def viterbi(sentence, phi, tags, alpha, strings, strings_abr):
@@ -30,36 +30,31 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr):
         for u in t1:
             for v in tags:
                 for w in t2:
-                    pi_val = pi.get((k-1,w,u), -0.5)
-                    if pi_val == -0.5:
+                    pi_val = pi.get((k-1,w,u), 0.5)
+                    if pi_val == 0.5:
                         continue
                     d = dict(w_i = sentence[k-1], t_2 = w, t_1 = u, t = v)
                     indices = get_alpha_indices(strings, phi, d)
-                    if indices == -0.5:
-                        continue
                     val = pi_val
                     for i in indices:
                         val += alpha[i]
-                    test = pi.get((k,u,v), -0.5)
-                    if test == -0.5 or val > test:
+                    test = pi.get((k,u,v), 0.5)
+                    if test == 0.5 or val > test:
                         pi[(k,u,v)] = val
-                        bp[(k,u,v)] = (w, copy.deepcopy(indices))
+                        bp[(k,u,v)] = w
     result_tags = []
     result_val = 0
     got_first = False
-    result_indices = []
     tags2 = tags
     if len(sentence) == 1:
         tags2 = ['*']
     for u in tags2:
         for v in tags:
-            pi_val = pi.get((len(sentence),u,v), -0.5)
-            if pi_val == -0.5:
+            pi_val = pi.get((len(sentence),u,v), 0.5)
+            if pi_val == 0.5:
                 continue
             d = dict(t_2 = u, t_1 = v, t = 'STOP')
             indices = get_alpha_indices(strings_abr, phi, d)
-            if indices == -0.5:
-                continue
             val = pi_val
             for i in indices:
                 val += alpha[i]
@@ -67,14 +62,12 @@ def viterbi(sentence, phi, tags, alpha, strings, strings_abr):
                 got_first = True
                 result_tags = [v,u]
                 result_val = val
-                result_indices = copy.deepcopy(indices)
-    for k in range(len(sentence)-2, -2, -1):
-        vals = bp[(k+2, result_tags[len(result_tags)-1], result_tags[len(result_tags)-2])]
-        result_tags.append(vals[0])
-        result_indices += vals[1]
+    for k in range(len(sentence)-2, 0, -1):
+        t = bp[(k+2, result_tags[len(result_tags)-1], result_tags[len(result_tags)-2])]
+        result_tags.append(t)
     result_tags.reverse()
     while result_tags[0] == '*':
         result_tags.reverse()
         result_tags.pop()
         result_tags.reverse()
-    return (copy.deepcopy(result_tags), copy.deepcopy(result_indices))
+    return copy.deepcopy(result_tags)
