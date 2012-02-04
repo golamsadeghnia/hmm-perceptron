@@ -7,7 +7,7 @@ from string import Template
 
 words = defaultdict(bool)
 phi = defaultdict(int)
-alpha = []
+alpha = defaultdict(int)
 possible_tags = []
 strings = []
 strings_abr = []
@@ -45,12 +45,13 @@ def get_strings():
     strings.append(copy.deepcopy(string))
 
 def get_alpha():
-    global alpha
     al = open(sys.argv[2], 'r')
     line = al.readline()
     while line:
         l = line.strip()
-        alpha.append(int(l))
+        if l:
+            vals = l.split(' ')
+            alpha[int(vals[0])] = int(vals[1])
         line = al.readline()
 
 def get_sentence(data):
@@ -79,7 +80,6 @@ def get_phi():
         line = data.readline()
 
 def evaluate():
-    global alpha
     global possible_tags
     global strings
     global strings_abr
@@ -91,7 +91,7 @@ def evaluate():
     output = open(sys.argv[5], 'w')
     sentence = get_sentence(data)
     while sentence:
-        result = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, 0)
+        result = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr)
         tags = result[0]
         for i in range(len(sentence)):
             output.write('{} {}\n'.format(sentence[i], tags[i]))
