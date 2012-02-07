@@ -3,6 +3,7 @@ from collections import defaultdict
 
 words = defaultdict(int)
 tags = defaultdict(int)
+word_tag = dict(defaultdict(int))
 total_errors = 0
 total_words = 0
 
@@ -35,6 +36,18 @@ def print_vals():
             print '{}\t\t{}'.format(key, value)
         else:
             print '{}\t{}'.format(key, value)
+    print
+    print
+    for tag in word_tag:
+        print '{}: number of labelings that should be labeled {}'.format(tag,tag)
+        print '-----'
+        for key,value in sorted(word_tag[tag].iteritems(), key = lambda (k,v): (-v,k)):
+            if len(key) < 8:
+                print '{}\t\t{}'.format(key, value)
+            else:
+                print '{}\t{}'.format(key, value)
+        print
+        print
 
 def compare():
     global total_errors
@@ -54,6 +67,9 @@ def compare():
                 total_errors += 1
                 words[vals_data[0]] += 1
                 tags[vals_key[1]] += 1
+                if not word_tag.get(vals_key[1], False):
+                    word_tag[vals_key[1]] = defaultdict(int)
+                word_tag[vals_key[1]][vals_key[0]] += 1
         line_data = data.readline()
         line_key = key.readline()
     print_vals()
