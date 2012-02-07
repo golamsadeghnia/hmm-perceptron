@@ -11,7 +11,7 @@ from time import time
 Words = defaultdict(int)
 phi = defaultdict(int)
 alpha = defaultdict(int)
-alpha_average = defaultdict(tuple) #(total sum, example number of last update, value of last update)
+alpha_average = defaultdict(int)
 possible_tags = []
 strings = []
 strings_abr = []
@@ -79,7 +79,7 @@ def get_sentence_and_tags(data):
         l = line.strip()
     return (copy.deepcopy(sentence), copy.deepcopy(tags))
 
-def get_alpha_indices(strings, d, examp_num):
+def get_alpha_indices(strings, d):
     positions = []
     for s in strings:
         index = phi.get(s.substitute(d), -1)
@@ -87,11 +87,11 @@ def get_alpha_indices(strings, d, examp_num):
             index = len(phi)
             phi[s.substitute(d)] = index
             alpha[index]
-            alpha_average[index] = (0,examp_num,0)
+            alpha_average[index]
         positions.append(index)
     return copy.deepcopy(positions)
 
-def get_indices(sentence, tags, examp_num):
+def get_indices(sentence, tags):
     global strings
     global strings_abr
     result = []
@@ -99,14 +99,14 @@ def get_indices(sentence, tags, examp_num):
 ##########Strings, trigram model############
         if i == 0:
             d = dict(w_i = sentence[0], t_2 = '*', t_1 = '*', t = tags[0])
-            result += get_alpha_indices(strings, d, examp_num)
+            result += get_alpha_indices(strings, d)
             
         elif i == 1:
             d = dict(w_i = sentence[1], t_2 = '*', t_1 = tags[0], t = tags[1])
-            result += get_alpha_indices(strings, d, examp_num)
+            result += get_alpha_indices(strings, d)
         else:
             d = dict(w_i = sentence[i], t_2 = tags[i-2], t_1 = tags[i-1], t = tags[i])
-            result += get_alpha_indices(strings, d, examp_num)
+            result += get_alpha_indices(strings, d)
 ##############regular Expressions############
         for j in regExp:
             if j.match(sentence[i]):
@@ -116,7 +116,7 @@ def get_indices(sentence, tags, examp_num):
                     index = len(phi)
                     phi[phrase] = index
                     alpha[index]
-                    alpha_average[index] = (0, examp_num, 0)
+                    alpha_average[index]
                 result.append(index)
         if Words[sentence[i]] < 6:
             phrase = 'w_i=_RARE_,t={}'.format(tags[i])
@@ -125,13 +125,13 @@ def get_indices(sentence, tags, examp_num):
                 index = len(phi)
                 phi[phrase] = index
                 alpha[index]
-                alpha_average[index] = (0, examp_num, 0)
+                alpha_average[index]
             result.append(index)            
     if len(sentence) == 1:
         d = dict(t_2 = '*', t_1 = tags[len(tags)-1], t = 'STOP')
     else:
         d = dict(t_2 = tags[len(tags)-2], t_1 = tags[len(tags)-1], t = 'STOP')
-    result += get_alpha_indices(strings_abr, d, examp_num)
+    result += get_alpha_indices(strings_abr, d)
     return copy.deepcopy(result)
 
 def perceptron(print_alpha = 0):
@@ -149,49 +149,39 @@ def perceptron(print_alpha = 0):
         data = open(sys.argv[1], 'r')
         vals = get_sentence_and_tags(data)
         j = 0
-        examp_num = 0
         while vals:
-            examp_num += 1
             sentence = vals[0]
             correct_tags = vals[1]
             tags = viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, Words, regExp)
-            indices = get_indices(sentence, tags, examp_num)
+            indices = get_indices(sentence, tags)
             if not tags == correct_tags:
                 dont_repeat = False
-                correct_indices = get_indices(sentence, correct_tags, examp_num)
+                correct_indices = get_indices(sentence, correct_tags)
                 for i in indices:
                     alpha[i] += -1*add_factor
                 for i in correct_indices:
                     alpha[i] += add_factor
             else:
                 j += 1
-            for i in set(indices) | set(correct_indices):
-                val1 = alpha_average[i][0]+(examp_num - alpha_average[i][1])*alpha_average[i][2]
-                val2 = examp_num
-                val3 = alpha[i]
-                alpha_average[i] = (val1,val2,val3)
+            for i in alpha:
+                alpha_average[i] += alpha[i]
             vals = get_sentence_and_tags(data)
         data.close()
         if dont_repeat:
             print 'SUCCESS!!!'
             break
         print 'number correct: {0}'.format(j)
-        for i in alpha:
-            val1 = alpha_average[i][0]+(examp_num+1 - alpha_average[i][1])*alpha_average[i][2]
-            val2 = 1
-            val3 = alpha[i]
-            alpha_average[i] = (val1,val2,val3)
         if print_alpha:
             write_alpha(t)
 
 def write_alpha(t):
     global alpha_average
-    string = 'outputs_faster/alpha_{}.txt'.format(t)
+    string = 'outputs_slower/test/alpha_{}.txt'.format(t)
     out = open(string, 'w')
     for i in alpha_average:
-        out.write('{} {}\n'.format(i, alpha_average[i][0]))
+        out.write('{} {}\n'.format(i, alpha_average[i]))
     out.close()
-    string = 'outputs_faster/phi_dictionary_{}.txt'.format(t)
+    string = 'outputs_slower/test/phi_dictionary_{}.txt'.format(t)
     out = open(string, 'w')
     for i in phi:
         out.write('{} {}\n'.format(i, phi[i]))
