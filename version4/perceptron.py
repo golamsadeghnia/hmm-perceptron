@@ -87,7 +87,7 @@ def get_alpha_indices(strings, d, examp_num):
             index = len(phi)
             phi[s.substitute(d)] = index
             alpha[index]
-            alpha_average[index] = (0,examp_num,0)
+            alpha_average[index] = (0, examp_num, 0)
         positions.append(index)
     return copy.deepcopy(positions)
 
@@ -100,7 +100,6 @@ def get_indices(sentence, tags, examp_num):
         if i == 0:
             d = dict(w_i = sentence[0], t_2 = '*', t_1 = '*', t = tags[0])
             result += get_alpha_indices(strings, d, examp_num)
-            
         elif i == 1:
             d = dict(w_i = sentence[1], t_2 = '*', t_1 = tags[0], t = tags[1])
             result += get_alpha_indices(strings, d, examp_num)
