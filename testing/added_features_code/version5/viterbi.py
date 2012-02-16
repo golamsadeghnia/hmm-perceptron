@@ -6,8 +6,11 @@ import re
 
 pi = defaultdict(int)
 bp = defaultdict(tuple)
+i = 0
 
 def get_alpha_indices(strings, phi, d, Words, regExp, abr, abr_strings):
+    test = True
+    global i
     for s in abr_strings:
         index = phi.get(s.substitute(d), -1)
         if index == -1:
@@ -27,10 +30,14 @@ def get_alpha_indices(strings, phi, d, Words, regExp, abr, abr_strings):
                     continue
                 positions.append(index)
         if Words[d['w_i']] < 6:
+            test = False
             phrase = 'w_i=_RARE_,t={}'.format(d['t'])
             index = phi.get(phrase, -1)
             if not index == -1:
                 positions.append(index)        
+    if test:
+        i += 1
+        print i
     return copy.deepcopy(positions)
 
 def viterbi(sentence, phi, tags, alpha, strings, strings_abr, Words, regExp):
