@@ -146,7 +146,7 @@ def perceptron(print_alpha = 0):
     global strings
     global strings_abr
     global add_factor
-    get_regExp()
+#    get_regExp()
     get_strings()
     get_tags()
     get_phi()
@@ -194,12 +194,12 @@ def perceptron(print_alpha = 0):
 
 def write_alpha(t):
     global alpha_average
-    string = 'outputs/alpha_{}.txt'.format(t)
+    string = 'outputs_short/alpha_{}.txt'.format(t)
     out = open(string, 'w')
     for i in alpha_average:
         out.write('{} {}\n'.format(i, alpha_average[i][0]))
     out.close()
-    string = 'outputs/phi_dictionary_{}.txt'.format(t)
+    string = 'outputs_short/phi_dictionary_{}.txt'.format(t)
     out = open(string, 'w')
     for i in phi:
         out.write('{} {}\n'.format(i, phi[i]))

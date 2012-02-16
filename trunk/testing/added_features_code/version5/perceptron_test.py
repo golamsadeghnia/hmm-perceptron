@@ -101,7 +101,7 @@ def evaluate():
     get_strings()
     get_alpha()
     get_phi()
-    get_regExp()
+#    get_regExp()
     data = open(sys.argv[4], 'r')
     output = open(sys.argv[5], 'w')
     sentence = get_sentence(data)
