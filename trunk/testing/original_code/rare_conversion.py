@@ -28,7 +28,8 @@ def convert():
             out.write('{} '.format(word))
             for i in range(1,len(vals)-1):
                 out.write('{} '.format(vals[i]))
-            out.write('{}'.format(vals[len(vals)-1]))
+            if not len(vals) == 1:
+                out.write('{}'.format(vals[len(vals)-1]))
         out.write('\n')
         line = data.readline()
 
