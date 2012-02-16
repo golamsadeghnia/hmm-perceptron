@@ -21,13 +21,13 @@ def get_alpha_indices(strings, phi, d, Words, regExp, abr, abr_strings):
     if not abr:
         for i in regExp:
             if i.match(d['w_i']):
-                phrase = 'w_i={},t={}'.format(regExp[i],d['t'])
+                phrase = 'w_i={0},t={1}'.format(regExp[i],d['t'])
                 index = phi.get(phrase, -1)
                 if index == -1:
                     continue
                 positions.append(index)
         if Words[d['w_i']] < 5:
-            phrase = 'w_i=_RARE_,t={}'.format(d['t'])
+            phrase = 'w_i=_RARE_,t={0}'.format(d['t'])
             index = phi.get(phrase, -1)
             if not index == -1:
                 positions.append(index)        

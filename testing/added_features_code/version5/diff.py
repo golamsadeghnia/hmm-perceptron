@@ -12,40 +12,40 @@ def print_vals():
     global total_words
     print 'TOTAL NUMBER OF WORDS:'
     print '---------------------- '
-    print '{}'.format(total_words)
+    print '{0}'.format(total_words)
     print
     print
     print 'TOTAL NUMBER OF ERRORS:'
     print '---------------------- '
-    print '{}'.format(total_errors)
+    print '{0}'.format(total_errors)
     print
     print
     print 'INCORRECT LABELS: number of incorrect labelings by the data for each correct label'
     print '---------------- '
     for key,value in sorted(tags.iteritems(), key = lambda (k,v): (-v,k)):
         if len(key) < 8:
-            print '{}\t\t{}'.format(key, value)
+            print '{0}\t\t{1}'.format(key, value)
         else:
-            print '{}\t{}'.format(key, value)
+            print '{0}\t{1}'.format(key, value)
     print
     print
     print 'INCORRECT WORDS: number of incorrect labelings for a given word'
     print '--------------- '
     for key,value in sorted(words.iteritems(), key = lambda (k,v): (-v,k)):
         if len(key) < 8:
-            print '{}\t\t{}'.format(key, value)
+            print '{0}\t\t{1}'.format(key, value)
         else:
-            print '{}\t{}'.format(key, value)
+            print '{0}\t{1}'.format(key, value)
     print
     print
     for tag in word_tag:
-        print '{}: number of labelings that should be labeled {}'.format(tag,tag)
+        print '{0}: number of labelings that should be labeled {1}'.format(tag,tag)
         print '-----'
         for key,value in sorted(word_tag[tag].iteritems(), key = lambda (k,v): (-v,k)):
             if len(key) < 8:
-                print '{}\t\t{}'.format(key, value)
+                print '{0}\t\t{1}'.format(key, value)
             else:
-                print '{}\t{}'.format(key, value)
+                print '{0}\t{1}'.format(key, value)
         print
         print
 
