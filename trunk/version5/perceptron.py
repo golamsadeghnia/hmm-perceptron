@@ -146,7 +146,7 @@ def perceptron(print_alpha = 0):
     global strings
     global strings_abr
     global add_factor
-#    get_regExp()
+    get_regExp()
     get_strings()
     get_tags()
     get_phi()

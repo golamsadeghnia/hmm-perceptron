@@ -101,14 +101,14 @@ def evaluate():
     get_strings()
     get_alpha()
     get_phi()
-#    get_regExp()
+    get_regExp()
     data = open(sys.argv[4], 'r')
     output = open(sys.argv[5], 'w')
     sentence = get_sentence(data)
     while sentence:
         tags = viterbi.viterbi(sentence, phi, possible_tags, alpha, strings, strings_abr, Words, regExp)
         for i in range(len(sentence)):
-            output.write('{} {}\n'.format(sentence[i], tags[i]))
+            output.write('{0} {1}\n'.format(sentence[i], tags[i]))
         output.write('\n')
         sentence = get_sentence(data)
 

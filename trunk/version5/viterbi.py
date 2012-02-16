@@ -21,7 +21,7 @@ def get_alpha_indices(strings, phi, d, Words, regExp, abr):
                 if index == -1:
                     continue
                 positions.append(index)
-        if Words[d['w_i']] < 6:
+        if Words[d['w_i']] < 5:
             phrase = 'w_i=_RARE_,t={0}'.format(d['t'])
             index = phi.get(phrase, -1)
             if not index == -1:
