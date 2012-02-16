@@ -109,7 +109,7 @@ def get_indices(sentence, tags, examp_num):
 ##############regular Expressions############
         for j in regExp:
             if j.match(sentence[i]):
-                phrase = 'w_i={},t={}'.format(regExp[j],tags[i])
+                phrase = 'w_i={0},t={1}'.format(regExp[j],tags[i])
                 index = phi.get(phrase, -1)
                 if index == -1:
                     index = len(phi)
@@ -118,7 +118,7 @@ def get_indices(sentence, tags, examp_num):
                     alpha_average[index] = (0, examp_num, 0)
                 result.append(index)
         if Words[sentence[i]] < 6:
-            phrase = 'w_i=_RARE_,t={}'.format(tags[i])
+            phrase = 'w_i=_RARE_,t={0}'.format(tags[i])
             index = phi.get(phrase, -1)
             if index == -1:
                 index = len(phi)
@@ -194,15 +194,15 @@ def perceptron(print_alpha = 0):
 
 def write_alpha(t):
     global alpha_average
-    string = 'outputs_short/alpha_{}.txt'.format(t)
+    string = 'outputs/alpha_{0}.txt'.format(t)
     out = open(string, 'w')
     for i in alpha_average:
-        out.write('{} {}\n'.format(i, alpha_average[i][0]))
+        out.write('{0} {1}\n'.format(i, alpha_average[i][0]))
     out.close()
-    string = 'outputs_short/phi_dictionary_{}.txt'.format(t)
+    string = 'outputs/phi_dictionary_{0}.txt'.format(t)
     out = open(string, 'w')
     for i in phi:
-        out.write('{} {}\n'.format(i, phi[i]))
+        out.write('{0} {1}\n'.format(i, phi[i]))
     out.close()
 
 perceptron(1)
